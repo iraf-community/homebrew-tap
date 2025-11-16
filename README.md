@@ -1,0 +1,16 @@
+# This is work in progress and does not work yet. Help is appreciated.
+
+![Be careful](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Baustelle.svg/2339px-Baustelle.svg.png)
+
+# Homebrew Tap for IRAF Community
+
+This Homebrew tap contains IRAF packages. Most of them are community
+maintained.
+
+## Installation
+
+```bash
+brew tap iraf-community/tap
+brew install iraf
+brew install x11iraf
+```
