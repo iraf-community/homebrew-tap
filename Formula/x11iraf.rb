@@ -10,7 +10,7 @@ class X11iraf < Formula
     sha256 cellar: :any, arm64_tahoe: "27a97214f964e0111394d2b8645b5bc4e3c96f1e8a83fe62354e1d1a5213ee3c"
   end
 
-  depends_on "iraf"
+  depends_on "iraf" => :build
   depends_on "libxaw"
   depends_on "libxaw3d"
   depends_on "libxmu"
