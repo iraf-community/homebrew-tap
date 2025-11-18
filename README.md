@@ -13,4 +13,11 @@ maintained.
 brew tap iraf-community/tap
 brew install iraf
 brew install x11iraf
+…
 ```
+
+## Available packages
+
+ * **iraf** -- Image Reduction and Analysis Facility
+ * **x11iraf** -- X11 terminal emulator and image dispplay for IRAF
+ * **iraf-fitsutil** -- FITS utilities for IRAF
