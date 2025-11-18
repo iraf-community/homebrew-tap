@@ -6,8 +6,8 @@ class X11iraf < Formula
 
   bottle do
     root_url "https://github.com/iraf-community/homebrew-tap/releases/download/x11iraf-2.2"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe: "27a97214f964e0111394d2b8645b5bc4e3c96f1e8a83fe62354e1d1a5213ee3c"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe: "4870ce775d6f11da6602c11a7b2611ee8aa5d32d42df7ae7ee9dbfb8d85d6e4c"
   end
 
   depends_on "iraf" => :build
