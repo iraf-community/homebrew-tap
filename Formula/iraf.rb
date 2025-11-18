@@ -37,7 +37,7 @@ class Iraf < Formula
   def post_install
     iraf_extern = HOMEBREW_PREFIX/"lib/iraf-extern"
     mkdir_p iraf_extern
-    (libexec/"extern").install_symlink iraf_extern
+    libexec.install_symlink iraf_extern => "extern"
   end
 
   test do
