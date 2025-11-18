@@ -19,6 +19,15 @@ class IrafFitsutil < Formula
   def post_install
     iraf_extern = HOMEBREW_PREFIX/"lib/iraf-extern"
     mkdir_p iraf_extern
-    libexec.install_symlink iraf_extern/"fitsutil"
+    iraf_extern.install_symlink libexec => "fitsutil"
+  end
+
+  test do
+    (testpath/"version.cl").write <<~EOF
+      fitsutil
+      =version
+      logout
+    EOF
+    assert_match "2018.07.06", shell_output("#{HOMEBREW_PREFIX}/bin/irafcl -f version.cl")
   end
 end
