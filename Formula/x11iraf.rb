@@ -11,8 +11,10 @@ class X11iraf < Formula
   end
 
   depends_on "iraf" => :build
+  depends_on "libx11"
   depends_on "libxaw"
   depends_on "libxaw3d"
+  depends_on "libxext"
   depends_on "libxmu"
   depends_on "libxpm"
   depends_on "libxt"
