@@ -15,4 +15,10 @@ class IrafFitsutil < Formula
 
     libexec.install Dir["*"]
   end
+
+  def post_install
+    iraf_extern = HOMEBREW_PREFIX/"lib/iraf-extern"
+    mkdir_p iraf_extern
+    libexec.install_symlink iraf_extern/"fitsutil"
+  end
 end
