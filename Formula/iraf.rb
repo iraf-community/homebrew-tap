@@ -4,6 +4,13 @@ class Iraf < Formula
   url "https://github.com/iraf-community/iraf/archive/refs/tags/v2.18.1.tar.gz"
   sha256 "d4e0859088459622625d27b5c025524dc70fbf334e8df5e59dd32b65630e7981"
 
+  bottle do
+    root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-2.18.1"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "58f1aac1c0ed21f238d726f1d42a15f1f1d7d8134b55e908453316c12906872e"
+    sha256 cellar: :any_skip_relocation, sequoia:     "a247eabde49e0490a1a88e444b0543c70a8cfae4633bac9038f5c533dd3c90c3"
+  end
+
   def install
     system "make", "IRAFARCH="
     system "make", "install", "DESTDIR=build", "prefix=/usr"
