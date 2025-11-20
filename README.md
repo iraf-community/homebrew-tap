@@ -22,3 +22,4 @@ brew install x11iraf
  * **iraf**: Image Reduction and Analysis Facility
  * **x11iraf**: X11 terminal emulator and image dispplay for IRAF
  * **iraf-fitsutil**: FITS utilities for IRAF
+ * **iraf-sptable**: Tabular spectra utilities
