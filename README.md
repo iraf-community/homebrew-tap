@@ -20,7 +20,8 @@ brew install x11iraf
 ## Available packages
 
  * **iraf**: Image Reduction and Analysis Facility
- * **x11iraf**: X11 terminal emulator and image dispplay for IRAF
+ * **x11iraf**: X11 terminal emulator and image display for IRAF
  * **iraf-fitsutil**: FITS utilities for IRAF
- * **iraf-sptable**: Tabular spectra utilities
  * **iraf-rvsao**: Radial velocities package
+ * **iraf-sptable**: Tabular spectra utilities
+ * **iraf-st4gem**: Selected tasks from STSDAS
