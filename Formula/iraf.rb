@@ -6,9 +6,9 @@ class Iraf < Formula
 
   bottle do
     root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-2.18.1"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "58f1aac1c0ed21f238d726f1d42a15f1f1d7d8134b55e908453316c12906872e"
-    sha256 cellar: :any_skip_relocation, sequoia:     "a247eabde49e0490a1a88e444b0543c70a8cfae4633bac9038f5c533dd3c90c3"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "bdcdbf571e9bac8ef5e09216be1ac748d3346e976331a00578a1b0fadd68c4c4"
+    sha256 cellar: :any_skip_relocation, sequoia:     "0e94fc0a4e9a98fc605e29d4297d8d57eead8cee8973982f775a3d63d74950b0"
   end
 
   def install
