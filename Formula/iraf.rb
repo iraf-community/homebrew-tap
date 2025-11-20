@@ -15,7 +15,6 @@ class Iraf < Formula
     system "make", "IRAFARCH="
     system "make", "install", "DESTDIR=build", "prefix=/usr"
 
-    rm_r "build/usr/lib/iraf/extern"
     libexec.install Dir["build/usr/lib/iraf/*"]
     share.install Dir["build/usr/share/*"]
 
@@ -32,12 +31,14 @@ class Iraf < Formula
     (bin/"xc").write_env_script libexec/"unix/bin/xc.e", env
     (bin/"xyacc").write_env_script libexec/"unix/bin/xyacc.e", env
     (bin/"sgidispatch").write_env_script libexec/"unix/bin/sgidispatch.e", env
+    rm_r libexec/"extern"
+    iraf_extern = HOMEBREW_PREFIX/"lib/iraf/extern"
+    libexec.install_symlink iraf_extern => "extern"
   end
 
   def post_install
-    iraf_extern = HOMEBREW_PREFIX/"lib/iraf-extern"
+    iraf_extern = HOMEBREW_PREFIX/"lib/iraf/extern"
     mkdir_p iraf_extern
-    libexec.install_symlink iraf_extern => "extern"
   end
 
   test do
