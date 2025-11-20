@@ -18,13 +18,8 @@ class IrafFitsutil < Formula
     ENV["fitsutil"] = "#{buildpath}/"
     system "mkpkg", "-p", "fitsutil"
 
-    libexec.install Dir["*"]
-  end
-
-  def post_install
-    iraf_extern = HOMEBREW_PREFIX/"lib/iraf-extern"
-    mkdir_p iraf_extern
-    iraf_extern.install_symlink libexec => "fitsutil"
+    iraf_extern = lib/"iraf/extern"
+    (iraf_extern/"fitsutil").install Dir["*"]
   end
 
   test do
