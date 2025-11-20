@@ -23,3 +23,4 @@ brew install x11iraf
  * **x11iraf**: X11 terminal emulator and image dispplay for IRAF
  * **iraf-fitsutil**: FITS utilities for IRAF
  * **iraf-sptable**: Tabular spectra utilities
+ * **iraf-rvsao**: Radial velocities package
