@@ -26,3 +26,4 @@ brew install x11iraf
  * **iraf-rvsao**: Radial velocities package
  * **iraf-sptable**: Tabular spectra utilities
  * **iraf-st4gem**: Selected tasks from STSDAS
+ * **iraf-xdimsum**: Deep Infrared Mosaicing Software
