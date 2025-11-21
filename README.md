@@ -22,6 +22,7 @@ brew install x11iraf
  * **iraf**: Image Reduction and Analysis Facility
  * **x11iraf**: X11 terminal emulator and image display for IRAF
  * **iraf-fitsutil**: FITS utilities for IRAF
+ * **iraf-mscred**: Mosaic CCD reduction package
  * **iraf-rvsao**: Radial velocities package
  * **iraf-sptable**: Tabular spectra utilities
  * **iraf-st4gem**: Selected tasks from STSDAS
