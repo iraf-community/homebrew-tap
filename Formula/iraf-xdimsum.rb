@@ -6,6 +6,12 @@ class IrafXdimsum < Formula
   version "2003.01.24"
   sha256 "1e447c7e0cab3b41be4dbf3e390c7f94095d7b3dd1390269f1c80733d8512c7d"
 
+  bottle do
+    root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-xdimsum-2003.01.24"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "64b6467a50e453eefb95b6e5bc4467ed07a9630d910e85a5d0ab874b4b8e824c"
+    sha256 cellar: :any_skip_relocation, sequoia:     "3009824a4299709309cb93ac5ec4e7b0f61311683d11d5d7c5c597d0660f860f"
+  end
+
   depends_on "iraf"
 
   patch :DATA
