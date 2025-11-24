@@ -13,6 +13,16 @@ class Iraf < Formula
     sha256 cellar: :any_skip_relocation, sequoia:       "1b362b85e25fff0d55634f1ffdf00d3583596eeb8bd521d962ae0dd3b8199a95"
   end
 
+  patch do
+    # Add command line execution to IRAF cl
+    url "https://github.com/iraf-community/iraf/commit/fee0c080deb91b91543b0750cda62662e3744ea0.patch?full_index=1"
+  end
+
+  patch do
+    # Add helpdb compilation to Makefile
+    url "https://github.com/iraf-community/iraf/commit/f905ce0ccaf39e6a29d238b910b3ae75caf716e6.patch?full_index=1"
+  end
+
   def install
     system "make", "IRAFARCH="
     system "make", "install", "DESTDIR=build", "prefix=/usr"
@@ -44,10 +54,6 @@ class Iraf < Formula
   end
 
   test do
-    (testpath/"version.cl").write <<~EOF
-      =version
-      logout
-    EOF
-    assert_match "IRAF V2.18.1 2025", shell_output("#{HOMEBREW_PREFIX}/bin/irafcl -f version.cl")
+    assert_match "IRAF V2.18.1 2025", shell_output("#{HOMEBREW_PREFIX}/bin/irafcl -c =version")
   end
 end
