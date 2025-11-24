@@ -17,6 +17,12 @@ brew install x11iraf
 …
 ```
 
+The **iraf** environment variable is
+
+```shell
+export iraf=${HOMEBREW_PREFIX}/opt/iraf/libexec/
+```
+
 ## Available packages
 
  * **iraf**: Image Reduction and Analysis Facility
