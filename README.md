@@ -20,7 +20,7 @@ brew install x11iraf
 The **iraf** environment variable is
 
 ```shell
-export iraf=${HOMEBREW_PREFIX}/opt/iraf/libexec/
+export iraf=${HOMEBREW_PREFIX}/lib/iraf/
 ```
 
 ## Available packages

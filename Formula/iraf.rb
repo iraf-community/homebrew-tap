@@ -15,29 +15,30 @@ class Iraf < Formula
     system "make", "IRAFARCH="
     system "make", "install", "DESTDIR=build", "prefix=/usr"
 
-    libexec.install Dir["build/usr/lib/iraf/*"]
+    iraf = lib/"iraf"
+    iraf.install Dir["build/usr/lib/iraf/*"]
     share.install Dir["build/usr/share/*"]
 
-    env = { "iraf" => "#{libexec}/" }
-    (bin/"irafcl").write_env_script libexec/"unix/hlib/irafcl.sh", env
-    (bin/"cl").write_env_script libexec/"unix/hlib/irafcl.sh", env
-    (bin/"ecl").write_env_script libexec/"unix/hlib/irafcl.sh", env
-    (bin/"mkiraf").write_env_script libexec/"unix/hlib/mkiraf.sh", env
-    (bin/"mkpkg").write_env_script libexec/"unix/bin/mkpkg.e", env
-    (bin/"rmbin").write_env_script libexec/"unix/bin/rmbin.e", env
-    (bin/"rmfiles").write_env_script libexec/"unix/bin/rmfiles.e", env
-    (bin/"rtar").write_env_script libexec/"unix/bin/rtar.e", env
-    (bin/"wtar").write_env_script libexec/"unix/bin/wtar.e", env
-    (bin/"xc").write_env_script libexec/"unix/bin/xc.e", env
-    (bin/"xyacc").write_env_script libexec/"unix/bin/xyacc.e", env
-    (bin/"sgidispatch").write_env_script libexec/"unix/bin/sgidispatch.e", env
-    rm_r libexec/"extern"
-    iraf_extern = HOMEBREW_PREFIX/"lib/iraf/extern"
-    libexec.install_symlink iraf_extern => "extern"
+    env = { "iraf" => "#{iraf}/" }
+    (bin/"irafcl").write_env_script iraf/"unix/hlib/irafcl.sh", env
+    (bin/"cl").write_env_script iraf/"unix/hlib/irafcl.sh", env
+    (bin/"ecl").write_env_script iraf/"unix/hlib/irafcl.sh", env
+    (bin/"mkiraf").write_env_script iraf/"unix/hlib/mkiraf.sh", env
+    (bin/"mkpkg").write_env_script iraf/"unix/bin/mkpkg.e", env
+    (bin/"rmbin").write_env_script iraf/"unix/bin/rmbin.e", env
+    (bin/"rmfiles").write_env_script iraf/"unix/bin/rmfiles.e", env
+    (bin/"rtar").write_env_script iraf/"unix/bin/rtar.e", env
+    (bin/"wtar").write_env_script iraf/"unix/bin/wtar.e", env
+    (bin/"xc").write_env_script iraf/"unix/bin/xc.e", env
+    (bin/"xyacc").write_env_script iraf/"unix/bin/xyacc.e", env
+    (bin/"sgidispatch").write_env_script iraf/"unix/bin/sgidispatch.e", env
+    rm_r iraf/"extern"
+    iraf_extern = HOMEBREW_PREFIX/"lib/iraf-extern"
+    iraf.install_symlink iraf_extern => "extern"
   end
 
   def post_install
-    iraf_extern = HOMEBREW_PREFIX/"lib/iraf/extern"
+    iraf_extern = HOMEBREW_PREFIX/"lib/iraf-extern"
     mkdir_p iraf_extern
   end
 
