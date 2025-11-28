@@ -29,4 +29,15 @@ class X11iraf < Formula
     libexec.install bin/"xgterm"
     (bin/"xgterm").write_env_script(libexec/"xgterm", TERMINFO: "#{opt_prefix}/share/terminfo")
   end
+
+  def caveats
+    <<~EOS
+      Running x11iraf locally requires to install the XQuartz server, either
+      as Homebrew cask with
+
+        brew install --cask xquartz
+
+      or from its homepage https://www.xquartz.org/
+    EOS
+  end
 end
