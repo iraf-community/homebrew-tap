@@ -6,6 +6,8 @@ class IrafXdimsum < Formula
   version "2003.01.24"
   sha256 "1e447c7e0cab3b41be4dbf3e390c7f94095d7b3dd1390269f1c80733d8512c7d"
 
+  IRAF_PACKAGE = "xdimsum".freeze
+
   bottle do
     root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-xdimsum-2003.01.24"
     sha256 cellar: :any_skip_relocation, arm64_tahoe: "64b6467a50e453eefb95b6e5bc4467ed07a9630d910e85a5d0ab874b4b8e824c"
@@ -19,20 +21,21 @@ class IrafXdimsum < Formula
   def install
     rm "bin"
     mkdir_p "bin"
-    ENV["xdimsum"] = "#{buildpath}/"
-    system "mkpkg", "-p", "xdimsum"
+    ENV[IRAF_PACKAGE] = "#{buildpath}/"
+    system "mkpkg", "-p", IRAF_PACKAGE
 
     iraf_extern = lib/"iraf/extern"
-    (iraf_extern/"xdimsum").install Dir["*"]
+    (iraf_extern/IRAF_PACKAGE).install Dir["*"]
   end
 
   test do
-    (testpath/"version.cl").write <<~EOF
-      xdimsum
-      =version
-      logout
-    EOF
-    assert_match "January 24, 2003", shell_output("#{HOMEBREW_PREFIX}/bin/irafcl -f version.cl")
+    # Extract the version string of the package directly from the .par
+    # file and check whether it can be reproduced from the
+    # corresponding IRAF variable.
+    ref = shell_output("grep ^version, #{lib}/iraf/extern/#{IRAF_PACKAGE}/#{IRAF_PACKAGE}.par  | cut -d\\\" -f2")
+    ver = shell_output("irafcl -c #{IRAF_PACKAGE} -c =version")
+    puts "'#{ref}' == '#{ver}'?"
+    assert_match ref, ver
   end
 end
 

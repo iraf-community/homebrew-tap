@@ -4,6 +4,8 @@ class IrafRvsao < Formula
   url "http://tdc-www.harvard.edu/iraf/rvsao/rvsao-2.8.5.tar.gz"
   sha256 "0ccd06a4ff4ba5a344787406145f1348ba0cfbaf7771e51e0356ce8e93979b1a"
 
+  IRAF_PACKAGE = "rvsao".freeze
+
   bottle do
     root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-rvsao-2.8.5"
     sha256 cellar: :any_skip_relocation, arm64_tahoe: "3019764443f04b4656c8f0e0042419b43cfca20785e883b86e03b29d5a4ac8e1"
@@ -17,20 +19,21 @@ class IrafRvsao < Formula
   def install
     rm "bin"
     mkdir_p "bin"
-    ENV["rvsao"] = "#{buildpath}/"
-    system "mkpkg", "-p", "rvsao"
+    ENV[IRAF_PACKAGE] = "#{buildpath}/"
+    system "mkpkg", "-p", IRAF_PACKAGE
 
     iraf_extern = lib/"iraf/extern"
-    (iraf_extern/"rvsao").install Dir["*"]
+    (iraf_extern/IRAF_PACKAGE).install Dir["*"]
   end
 
   test do
-    (testpath/"version.cl").write <<~EOF
-      rvsao
-      =version
-      logout
-    EOF
-    assert_match "RVSAO 2.8.5, March 15, 2022", shell_output("#{HOMEBREW_PREFIX}/bin/irafcl -f version.cl")
+    # Extract the version string of the package directly from the .par
+    # file and check whether it can be reproduced from the
+    # corresponding IRAF variable.
+    ref = shell_output("grep ^version, #{lib}/iraf/extern/#{IRAF_PACKAGE}/#{IRAF_PACKAGE}.par  | cut -d\\\" -f2")
+    ver = shell_output("irafcl -c #{IRAF_PACKAGE} -c =version")
+    puts "'#{ref}' == '#{ver}'?"
+    assert_match ref, ver
   end
 end
 
