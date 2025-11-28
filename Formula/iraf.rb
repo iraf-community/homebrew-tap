@@ -6,11 +6,11 @@ class Iraf < Formula
 
   bottle do
     root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-2.18.1"
-    rebuild 5
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f3d9bbdbdf55d3eb3930f8cea896bbe6384c17f80a0bf1282f3bca49e64ad433"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f10d3e3799931adfae4bdb35839f98d30340f45135889194456d27ef6d3cd55"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c397d9d4e677b1a4c19d404a9c58742ee8680e9bf1cfb078688f7f61092ca07b"
-    sha256 cellar: :any_skip_relocation, sequoia:       "1b362b85e25fff0d55634f1ffdf00d3583596eeb8bd521d962ae0dd3b8199a95"
+    rebuild 6
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "268fd19830074fb220eb392175705f43c8b7f5255d68cd75c8e853bef1d96df3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99d939886aa7be7ac6d4d7143a282df41f5f5718e6bb198f0f1dce149fded71e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a45507b70cebe1d23e54ee8b3243cfd76a5d0f7ae86baa7a1f066a83df43024d"
+    sha256 cellar: :any_skip_relocation, sequoia:       "cfdcaa2caaa47e89b8918777ec46a70151dfe4b6e6dcecd7afc2e394a27fda54"
   end
 
   patch do
