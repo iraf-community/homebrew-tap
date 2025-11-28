@@ -21,6 +21,7 @@ class IrafRvsao < Formula
     mkdir_p "bin"
     ENV[IRAF_PACKAGE] = "#{buildpath}/"
     system "mkpkg", "-p", IRAF_PACKAGE
+    system "irafcl", "-c", "softools; mkhelpdb helpdir=lib$root.hd helpdb=lib$helpdb.mip"
 
     iraf_extern = lib/"iraf/extern"
     (iraf_extern/IRAF_PACKAGE).install Dir["*"]
