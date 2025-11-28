@@ -54,6 +54,12 @@ class Iraf < Formula
   end
 
   test do
-    assert_match "IRAF V2.18.1 2025", shell_output("#{HOMEBREW_PREFIX}/bin/irafcl -c =version")
+    # Extract the version string of the package directly from the .par
+    # file and check whether it can be reproduced from the
+    # corresponding IRAF variable.
+    ref = shell_output("grep ^version, #{opt_libexec}/pkg/ecl/cl.par  | cut -d\\\" -f2")
+    ver = shell_output("#{bin}/irafcl -c =version")
+    puts "'#{ref}' == '#{ver}'?"
+    assert_match ref, ver
   end
 end
