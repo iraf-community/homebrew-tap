@@ -9,8 +9,11 @@ class IrafMscred < Formula
 
   bottle do
     root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-mscred-5.05+20250915"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "ae6e44f756339b167f7ae7c86a1e4eb75a6d1a6b740832176ea5c59b8cfb4fc0"
-    sha256 cellar: :any_skip_relocation, sequoia:     "0f6589435bd9560fec0662d08b60032485fb72b4f3fd7550f6886591b480f5c6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f34de9ba4eaa5d008d0561c80ba530789ee83dfad6bf91c3bf96d216c0185607"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4161955f23d5c87212cef3955df38919f01c905dc591116b1710e5525e32625a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53713a84c8d06496d0187337ac06ee41af2e4fe51eddb946c55c02183c435311"
+    sha256 cellar: :any_skip_relocation, sequoia:       "d6c995b8d57accaa6f162555e91070fc4575580b3948fdde5d427c7b10b3e975"
   end
 
   depends_on "iraf"
