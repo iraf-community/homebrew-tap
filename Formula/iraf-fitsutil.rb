@@ -8,8 +8,10 @@ class IrafFitsutil < Formula
 
   bottle do
     root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-fitsutil-2024.07.06"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe: "8043f36647ef044d1f058ade3d5bee1f554be316f11f5a0b73f190f3bf850531"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "f7f96975e08a400c18cd3a3fcec9e0993beeca4558f016828d25817b97c2d703"
+    sha256 cellar: :any, arm64_sequoia: "32831fa2a13b6eb7baed6e2ace89254148c72ba08ccf9ae832e2f3acb4043e1d"
+    sha256 cellar: :any, arm64_sonoma:  "daf373b51f1f720bacf1720ece65925942caa6b111c48499f8968e0f8736ded1"
   end
 
   depends_on "cfitsio"
