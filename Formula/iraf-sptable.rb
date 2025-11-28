@@ -8,8 +8,11 @@ class IrafSptable < Formula
 
   bottle do
     root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-sptable-1.0.pre20"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "bf6e76c295fdd734318371e3f257ddfd83bb3b854c35acd4c29cd3b47fc46af0"
-    sha256 cellar: :any_skip_relocation, sequoia:     "3a3d86e6ccccd98e0420ce7aedc4b359545df03dc4c44eafd989f553b0c60e07"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "436124c62479f09885434692505670b1226b69f4296f1931b59da5b826946220"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84a83bcbcdea16969f03f5137b25ff5b2b6125c61290c9df2c2f209d83e170e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d61040d27ebd72ee8c01820f65f4debe1cae00dd86370175401d0e9cf7beb66a"
+    sha256 cellar: :any_skip_relocation, sequoia:       "2f52c60779c291cf5116faacd3cebc4571244a124bb349d8dd67ca9a9a17cca4"
   end
 
   depends_on "iraf"
