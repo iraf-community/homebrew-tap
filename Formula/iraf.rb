@@ -53,6 +53,16 @@ class Iraf < Formula
     mkdir_p iraf_extern
   end
 
+  def caveats
+    <<~EOS
+      External software may require to set the "iraf" environment variable to:
+
+        export iraf=#{opt_libexec}/
+
+      You may want to add this to your startup script.
+    EOS
+  end
+
   test do
     # Extract the version string of the package directly from the .par
     # file and check whether it can be reproduced from the
