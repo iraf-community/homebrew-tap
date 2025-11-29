@@ -55,11 +55,13 @@ class Iraf < Formula
 
   def caveats
     <<~EOS
-      External software may require to set the "iraf" environment variable to:
+      If x11iraf is installed, IRAF can be started with "irafcl -x"
+      within a newly started X11 xgterm.  External software may
+      require to set the "iraf" environment variable to:
 
         export iraf=#{opt_libexec}/
 
-      You may want to add this to your startup script.
+      You may want to add this line to your startup script.
     EOS
   end
 
