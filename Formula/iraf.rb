@@ -4,14 +4,11 @@ class Iraf < Formula
   url "https://github.com/iraf-community/iraf/archive/refs/tags/v2.18.1.tar.gz"
   sha256 "d4e0859088459622625d27b5c025524dc70fbf334e8df5e59dd32b65630e7981"
 
-  bottle do
-    root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-2.18.1"
-    rebuild 7
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ff9d96de0044d1b1835761d65640d627b56a11a0c97faaa2f2c49433490ead6a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c442572e31cd703df3b992bf2b00f07d9cadce4ff05eafb2c6d4d969d701c2b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ffd8976918deae15a92a254d5175170031a12bd6e0ebed2b6073a5328b610b0"
-    sha256 cellar: :any_skip_relocation, sequoia:       "30a10d80ee364aab464f950dfab08dbe6c55bb0dd0ad6b17866c44f7f9bc438e"
-  end
+  uses_from_macos "bison"
+  uses_from_macos "flex"
+  uses_from_macos "libedit"
+  uses_from_macos "ncurses"
+  uses_from_macos "zlib"
 
   patch do
     # Add command line execution to IRAF cl
