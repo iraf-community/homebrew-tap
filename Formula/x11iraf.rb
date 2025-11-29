@@ -20,7 +20,8 @@ class X11iraf < Formula
   depends_on "libxmu"
   depends_on "libxpm"
   depends_on "libxt"
-  depends_on "ncurses"
+  uses_from_macos "ncurses"
+  uses_from_macos "tcl-tk"
 
   def install
     system "make"
