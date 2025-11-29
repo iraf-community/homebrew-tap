@@ -20,6 +20,10 @@ class Iraf < Formula
     url "https://github.com/iraf-community/iraf/commit/f905ce0ccaf39e6a29d238b910b3ae75caf716e6.patch?full_index=1"
   end
 
+  # Replace yacc by "bison -y" to work around glitches with XCode
+  # command line tools on older machines (Sonoma)
+  patch :DATA
+
   def install
     system "make", "IRAFARCH="
     system "make", "install", "DESTDIR=build", "prefix=/usr"
@@ -72,3 +76,31 @@ class Iraf < Formula
     assert_match ref, ver
   end
 end
+
+__END__
+diff --git a/pkg/cl/mkpkg b/pkg/cl/mkpkg
+index 05623fcca..9e9dacc88 100644
+--- a/pkg/cl/mkpkg
++++ b/pkg/cl/mkpkg
+@@ -23,7 +23,7 @@ relink:
+ 	    $endif
+ 	    $ifolder (ytab.c,  grammar.y)
+ 		$echo "rebuilding ytab.c"
+-		!yacc -vd grammar.y;
++		!bison -y -vd grammar.y;
+ 		!grep -v "\<stdlib.h\>" y.tab.c > ytab.c;
+ 		!mv y.tab.h ytab.h
+ 	    $endif
+diff --git a/pkg/ecl/mkpkg b/pkg/ecl/mkpkg
+index 4b2182a81..7bf167c41 100644
+--- a/pkg/ecl/mkpkg
++++ b/pkg/ecl/mkpkg
+@@ -23,7 +23,7 @@ relink:
+ 	    $endif
+ 	    $ifolder (ytab.c,  grammar.y)
+ 		$echo "rebuilding ytab.c"
+-		!yacc -vd grammar.y;
++		!bison -y -vd grammar.y;
+ 		!grep -v "\<stdlib.h\>" y.tab.c > ytab.c;
+ 		!mv y.tab.h ytab.h
+ 	    $endif
