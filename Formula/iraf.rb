@@ -6,11 +6,11 @@ class Iraf < Formula
 
   bottle do
     root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-2.18.1"
-    rebuild 8
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea509c3527004fb1049ab58a8acb62dc4e3cd8a93d80dfa02fb23de75180910c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "090faf83041dce41070b3623ff6dad44348c4cf699ecb58b7d39ce018aae4c38"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37cad289bb4a9323ad5fcb9ec4b3bb9b61f2f6c60ba1c8108b35f9a9109b04c1"
-    sha256 cellar: :any_skip_relocation, sequoia:       "1aeebe8acd181901231dab103bd652bb353d41317954ccc47ad289a141c7e6ed"
+    rebuild 9
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7dc00c1020501d2ec5f72d85b8786d9009dcfb119447e0b7872fe6ac724eb70a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80378e477695ea6adcae1cefe6e41f91e63892590abca85d857f16b08e37d4d4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c98bd9bb4fc7297c29fa92f48051125dac0e1d91be1645f8f259917e4a64dcc"
+    sha256 cellar: :any_skip_relocation, sequoia:       "38b191cc66a7570573082532a1b48f1b58d35818c291b646e7d8ac47383a952d"
   end
 
   uses_from_macos "bison"
