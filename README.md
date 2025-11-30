@@ -25,11 +25,11 @@ export iraf=${HOMEBREW_PREFIX}/opt/iraf/libexec/
 
 ## Available packages
 
- * **iraf**: Image Reduction and Analysis Facility
- * **x11iraf**: X11 terminal emulator and image display for IRAF
- * **iraf-fitsutil**: FITS utilities for IRAF
- * **iraf-mscred**: Mosaic CCD reduction package
- * **iraf-rvsao**: Radial velocities package
- * **iraf-sptable**: Tabular spectra utilities
- * **iraf-st4gem**: Selected tasks from STSDAS
- * **iraf-xdimsum**: Deep Infrared Mosaicing Software
+ * **iraf**: Image Reduction and Analysis Facility ![GitHub Release](https://img.shields.io/github/v/release/iraf-community/homebrew-tap?filter=iraf-2*&label=Homebrew&color=blue)
+ * **x11iraf**: X11 terminal emulator and image display for IRAF ![GitHub Release](https://img.shields.io/github/v/release/iraf-community/homebrew-tap?filter=x11iraf-*&label=Homebrew&color=blue)
+ * **iraf-fitsutil**: FITS utilities for IRAF ![GitHub Release](https://img.shields.io/github/v/release/iraf-community/homebrew-tap?filter=iraf-fitsutil-*&label=Homebrew&color=blue)
+ * **iraf-mscred**: Mosaic CCD reduction package ![GitHub Release](https://img.shields.io/github/v/release/iraf-community/homebrew-tap?filter=iraf-mscred-*&label=Homebrew&color=blue)
+ * **iraf-rvsao**: Radial velocities package ![GitHub Release](https://img.shields.io/github/v/release/iraf-community/homebrew-tap?filter=iraf-rvsao-*&label=Homebrew&color=blue)
+ * **iraf-sptable**: Tabular spectra utilities ![GitHub Release](https://img.shields.io/github/v/release/iraf-community/homebrew-tap?filter=iraf-sptable-*&label=Homebrew&color=blue)
+ * **iraf-st4gem**: Selected tasks from STSDAS ![GitHub Release](https://img.shields.io/github/v/release/iraf-community/homebrew-tap?filter=iraf-st4gem-*&label=Homebrew&color=blue)
+ * **iraf-xdimsum**: Deep Infrared Mosaicing Software ![GitHub Release](https://img.shields.io/github/v/release/iraf-community/homebrew-tap?filter=iraf-xdimsum-*&label=Homebrew&color=blue)
