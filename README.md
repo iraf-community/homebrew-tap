@@ -1,3 +1,6 @@
+> [!WARNING]
+> **This tap is currently in a beta test phase. Please try it out, but expect some glitches and [report](https://github.com/iraf-community/homebrew-tap/issues/new/choose) any issues.**
+
 # Homebrew Tap for IRAF Community
 
 This [Homebrew tap](https://brew.sh) contains
