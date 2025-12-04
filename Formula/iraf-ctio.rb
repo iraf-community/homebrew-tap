@@ -6,11 +6,11 @@ class IrafCtio < Formula
   sha256 "987dbc80e2df98624b192a03d7829f717f51aa70580ea7a8ed3ef24f09aa2708"
 
   bottle do
-    root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-ctio-2023-11-12"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7128d130795e43f71a9f78ad42f0ae3891a1579e5064e8049b858719cdd13a3f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78dad784ed327576cacfad3a108965f60d95cbc3f73dbe6e3802f2651ae464aa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc975f9b80b24e8d584aea336e938f50fef49bfd96a9c1023b6ed33229289de7"
-    sha256 cellar: :any_skip_relocation, sequoia:       "22a8c4defd463504a8f1d02c0cf4103f436ea957471d253ecd216a641395eb8a"
+    root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-ctio-202.11.12"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f4e1fdd98549f717ead3bd7ae25e33e06b21696eafd9983c18af6fb8841e07c2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24a8e7a4471cea607ed47b596e77b66ddbb63e54fc22fc40636395dd2c11cbff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a7d4ee76f88c6ec75df07de2eb2607fa65b294add7ee122fd51d75a7edd6b05"
+    sha256 cellar: :any_skip_relocation, sequoia:       "02804f6c91ecaf7bf50b6a1c7efcc74c0530246f2d06db7607c0333f4faa8ca1"
   end
 
   IRAF_PACKAGE = "ctio".freeze
