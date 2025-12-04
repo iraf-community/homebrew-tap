@@ -2,7 +2,7 @@ class IrafCtio < Formula
   desc "Tools for the Cerro Tololo Inter-American Observatory"
   homepage "https://github.com/iraf-community/iraf-ctio"
   url "https://github.com/iraf-community/iraf-ctio.git", revision: "a6113fe"
-  version "202.11.12"
+  version "2023.11.12"
   sha256 "987dbc80e2df98624b192a03d7829f717f51aa70580ea7a8ed3ef24f09aa2708"
 
   bottle do
