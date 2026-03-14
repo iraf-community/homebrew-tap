@@ -1,5 +1,3 @@
-> [!WARNING]
-> **This tap is currently in a beta test phase. Please try it out, but expect some glitches and [report](https://github.com/iraf-community/homebrew-tap/issues/new/choose) any issues.**
 
 # Homebrew Tap for IRAF Community
 
@@ -9,7 +7,7 @@ them are community maintained.
 
 ## Installation
 
-```bash
+```shell
 brew tap iraf-community/tap
 brew install iraf
 brew install x11iraf
@@ -33,3 +31,9 @@ export iraf=${HOMEBREW_PREFIX}/opt/iraf/libexec/
  * **iraf-sptable**: Tabular spectra utilities ![GitHub Release](https://img.shields.io/github/v/release/iraf-community/homebrew-tap?filter=iraf-sptable-*&label=&color=white)
  * **iraf-st4gem**: Selected tasks from STSDAS ![GitHub Release](https://img.shields.io/github/v/release/iraf-community/homebrew-tap?filter=iraf-st4gem-*&label=&color=white)
  * **iraf-xdimsum**: Deep infrared mosaicing software ![GitHub Release](https://img.shields.io/github/v/release/iraf-community/homebrew-tap?filter=iraf-xdimsum-*&label=&color=white)
+
+PyRAF can be installed from PyPI with the command
+
+```shell
+pip install pyraf
+```
