@@ -8,15 +8,6 @@ class IrafXdimsum < Formula
 
   IRAF_PACKAGE = "xdimsum".freeze
 
-  bottle do
-    root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-xdimsum-2003.01.24"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1e2dd037a3fb1c7f635aa96d84b3630c0e1b961f1d9ff784af0f3dc8297aa228"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21eaaaca24eaf6028836cfd6f50cfe710856b9b73a80554ced1f5e376781ce88"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e628e01906a74c1468116485a7431035ca8808e39096d2f23797db337ed571b2"
-    sha256 cellar: :any_skip_relocation, sequoia:       "bb152a9c0fb38120fc8628f8d147847038e2f1fa74755746038fb37845eb6389"
-  end
-
   depends_on "iraf"
 
   patch :DATA

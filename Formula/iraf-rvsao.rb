@@ -6,15 +6,6 @@ class IrafRvsao < Formula
 
   IRAF_PACKAGE = "rvsao".freeze
 
-  bottle do
-    root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-rvsao-2.8.5"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9ccb007d908f13fbcdddd99f25631490538591fa57c24ac10494f5aa90478721"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "107cb8ff1b154dd19ad962728e8e608ba62e3f64bb04b00270bbfa25c72ca503"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "155188a98aedc66cac0f6faad1461cf01d1e8c3e18e2a53f0d92a28d645b11e0"
-    sha256 cellar: :any_skip_relocation, sequoia:       "c458a38fdfdbb19842648ed54007d2167394c640e65572af08a4765979b3887b"
-  end
-
   depends_on "iraf"
 
   patch :DATA

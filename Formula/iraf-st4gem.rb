@@ -6,15 +6,6 @@ class IrafSt4gem < Formula
 
   IRAF_PACKAGE = "st4gem".freeze
 
-  bottle do
-    root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-st4gem-1.2.1"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6d65a6fb197905a8b67708a4f916df9503b2e70fb982f83f5480b2bd5882f463"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fdcd1f70ffd44720ad2b04d98720b45e7418603dff324505920362e5915b5b8d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11cf653274761d3aa152d190d5e7bed15a10627e5ef5b81736f75b8af048c0f6"
-    sha256 cellar: :any_skip_relocation, sequoia:       "73021cc4412df8555438c4bfd2ab53c39fcb572f96cab411a940251b85579109"
-  end
-
   depends_on "iraf"
 
   def install
