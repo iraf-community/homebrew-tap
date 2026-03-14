@@ -4,6 +4,16 @@ class Iraf < Formula
   url "https://github.com/iraf-community/iraf/archive/refs/tags/v2.18.1.tar.gz"
   sha256 "d4e0859088459622625d27b5c025524dc70fbf334e8df5e59dd32b65630e7981"
 
+  bottle do
+    root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-2.18.1"
+    rebuild 10
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aed398e01f2813367593a18878899a92726c0f4754c4c9e0769782c9a0843a32"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05ea2b09b8d49923b90188a744382972ec72f5d825e679c1fc1433556e5d56e2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "022e1aec6645d5a2ae8ebac8e1217d7a6670d95d65cff271a9df03da7de88b8c"
+    sha256 cellar: :any_skip_relocation, tahoe:         "31eac063b4eecf28d69efe1ddc465b5ed6546c0a5e9eff0c34a5a7413bab1350"
+    sha256 cellar: :any_skip_relocation, sequoia:       "e2c1b939b3456186e7624c516d96e3de3d6c2ad1d4208e1535f1c6c1aad646d3"
+  end
+
   uses_from_macos "bison"
   uses_from_macos "flex"
   uses_from_macos "libedit"
