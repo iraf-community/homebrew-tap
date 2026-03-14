@@ -4,6 +4,14 @@ class IrafFitsutil < Formula
   url "https://github.com/iraf-community/iraf-fitsutil/archive/refs/tags/v2024.07.06.tar.gz"
   sha256 "6f58744669a84e021a3c931f448645053d2ceb65213412f0688e11f48e2b5769"
 
+  bottle do
+    root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-fitsutil-2024.07.06"
+    rebuild 3
+    sha256 cellar: :any, arm64_tahoe:   "e45050b75bc880532cda6000b2516e5fd2f8b008274877952a3bd0e2e48ccbcb"
+    sha256 cellar: :any, arm64_sequoia: "8f745ae541b359d04dbf670cb0ae83bbf11ddc9d5ef62b6b45d655d6beab6303"
+    sha256 cellar: :any, arm64_sonoma:  "c050b8deab60722b4978ad6ddaef9605151a15651d59f7d54f7a810b3b0c43a7"
+  end
+
   IRAF_PACKAGE = "fitsutil".freeze
 
   depends_on "cfitsio"
