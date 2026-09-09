@@ -19,16 +19,6 @@ class Iraf < Formula
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  patch do
-    # Add command line execution to IRAF cl
-    url "https://github.com/iraf-community/iraf/commit/fee0c080deb91b91543b0750cda62662e3744ea0.patch?full_index=1"
-  end
-
-  patch do
-    # Add helpdb compilation to Makefile
-    url "https://github.com/iraf-community/iraf/commit/f905ce0ccaf39e6a29d238b910b3ae75caf716e6.patch?full_index=1"
-  end
-
   # Replace yacc by "bison -y" to work around glitches with XCode
   # command line tools on older machines (Sonoma)
   patch :DATA
