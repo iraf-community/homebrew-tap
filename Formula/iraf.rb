@@ -1,12 +1,11 @@
 class Iraf < Formula
   desc "Image Reduction and Analysis Facility"
   homepage "https://github.com/iraf-community/iraf"
-  url "https://github.com/iraf-community/iraf/archive/refs/tags/v2.18.1.tar.gz"
-  sha256 "d4e0859088459622625d27b5c025524dc70fbf334e8df5e59dd32b65630e7981"
+  url "https://github.com/iraf-community/iraf/archive/refs/tags/v2.18.2.tar.gz"
+  sha256 "a2ae5ab3f72262f6145f5b187d8cb0793beb0ee3fc1180d4f843c747749c89ef"
 
   bottle do
-    root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-2.18.1"
-    rebuild 10
+    root_url "https://github.com/iraf-community/homebrew-tap/releases/download/iraf-2.18.2"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:   "aed398e01f2813367593a18878899a92726c0f4754c4c9e0769782c9a0843a32"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "05ea2b09b8d49923b90188a744382972ec72f5d825e679c1fc1433556e5d56e2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "022e1aec6645d5a2ae8ebac8e1217d7a6670d95d65cff271a9df03da7de88b8c"
