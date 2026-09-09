@@ -48,9 +48,8 @@ class Iraf < Formula
     libexec.install_symlink iraf_extern => "extern"
   end
 
-  def post_install
-    iraf_extern = HOMEBREW_PREFIX/"lib/iraf/extern"
-    mkdir_p iraf_extern
+  post_install_steps do
+    mkdir_p "lib/iraf/extern", base: :homebrew_prefix
   end
 
   def caveats
