@@ -36,6 +36,8 @@ jobs:
       - run: brew test-bot --only-setup
 
       - run: brew test-bot --only-tap-syntax
+        if: matrix.os == 'macos-26'
+
       - run: brew test-bot --only-formulae
         if: github.event_name == 'pull_request'
 
